@@ -1,9 +1,9 @@
 import SwiftUI
 
 extension Color {
-    /// The Home Assistant primary brand color (`#009AC7`). Mirrors the shared `haPrimary` asset; defined
+    /// Calibre gold (`#C5A059`), the brand's accent. Mirrors the shared `haPrimary`; defined
     /// locally because the WatchWidgets extension does not link the Shared module.
-    static let haPrimary = Color(red: 0, green: 154 / 255, blue: 199 / 255)
+    static let haPrimary = Color(red: 197 / 255, green: 160 / 255, blue: 89 / 255)
 
     init?(hex: String?) {
         guard let hex else { return nil }

@@ -240,7 +240,7 @@ public struct HAMoreInfoMediaPlayer: View {
                             icon: onPlayPause == nil ? .stopIcon : isPlaying ? .pauseIcon : .playIcon,
                             size: 24
                         )
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color.haOnPrimary)
                         .frame(width: 72, height: 56)
                         .background(Capsule().fill(Color.haPrimary))
                     }

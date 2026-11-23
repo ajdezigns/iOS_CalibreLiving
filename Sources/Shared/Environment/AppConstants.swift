@@ -54,7 +54,8 @@ public enum AppConstants {
         public static let pushURLString = "https://mobile-apps.home-assistant.io/api/sendPushNotification"
     }
 
-    /// Home Assistant Blue
+    /// Calibre gold: the brand gold in dark mode, a darker gold in light mode so it stays legible on
+    /// white (about 4.7:1).
     public static var tintColor: UIColor {
         #if os(iOS)
         return UIColor { [lighterTintColor, darkerTintColor] (traitCollection: UITraitCollection) -> UIColor in
@@ -65,12 +66,14 @@ public enum AppConstants {
         #endif
     }
 
+    /// Calibre gold, `#C5A059`.
     public static var lighterTintColor: UIColor {
-        UIColor(hue: 199.0 / 360.0, saturation: 0.99, brightness: 0.96, alpha: 1.0)
+        UIColor(red: 0xC5 / 255.0, green: 0xA0 / 255.0, blue: 0x59 / 255.0, alpha: 1.0)
     }
 
+    /// Calibre gold at 70% brightness, `#8A703E`.
     public static var darkerTintColor: UIColor {
-        UIColor(hue: 199.0 / 360.0, saturation: 0.99, brightness: 0.67, alpha: 1.0)
+        UIColor(red: 0x8A / 255.0, green: 0x70 / 255.0, blue: 0x3E / 255.0, alpha: 1.0)
     }
 
     /// Help icon UIBarButtonItem

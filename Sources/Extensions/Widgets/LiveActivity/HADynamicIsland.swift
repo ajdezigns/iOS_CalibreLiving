@@ -38,7 +38,7 @@ private let previewProgressState = HALiveActivityAttributes.ContentState(
     progress: 40,
     progressMax: 100,
     icon: "washing-machine",
-    color: "#03A9F4"
+    color: "#C5A059"
 )
 
 @available(iOS 17.2, *)

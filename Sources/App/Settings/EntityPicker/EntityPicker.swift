@@ -250,6 +250,7 @@ struct EntityPicker: View {
             Button(action: confirmMultipleSelection) {
                 Text(L10n.EntityPicker.addSelected(selectedEntities.count))
                     .fontWeight(.semibold)
+                    .foregroundStyle(Color.haOnPrimary)
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)

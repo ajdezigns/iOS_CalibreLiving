@@ -4,7 +4,12 @@ import UIKit
 #endif
 
 public extension ShapeStyle where Self == Color {
-    static var haPrimary: Color { srgb(0x00, 0x9A, 0xC7, opacity: 1) }
+    /// Calibre gold (`#C5A059`), the brand's accent. Put ``haOnPrimary`` on top of a solid fill of it.
+    static var haPrimary: Color { srgb(0xC5, 0xA0, 0x59, opacity: 1) }
+
+    /// Calibre navy (`#0B1526`): text and icons drawn on a solid ``haPrimary`` fill. White on gold is
+    /// only about 2.5:1, so labels on gold use navy, as the Calibre web theme does.
+    static var haOnPrimary: Color { srgb(0x0B, 0x15, 0x26, opacity: 1) }
 
     /// The frontend's `--ha-color-fill-warning-loud-resting`: `orange-70` on light, `orange-40` on dark.
     /// The fill `ha-button variant="warning"` uses, for actions that need the user to step in.
@@ -33,8 +38,8 @@ public extension ShapeStyle where Self == Color {
 
     static var haColorBorderPrimaryQuiet: Color {
         adaptive(
-            light: srgb(0xB9, 0xE6, 0xFC, opacity: 1),
-            dark: srgb(0x00, 0x9A, 0xC7, opacity: 1)
+            light: srgb(0xE8, 0xD9, 0xBD, opacity: 1),
+            dark: srgb(0xC5, 0xA0, 0x59, opacity: 1)
         )
     }
 
@@ -115,10 +120,9 @@ public extension ShapeStyle where Self == Color {
         )
     }
 
-    /// The frontend's `--ha-button-primary-light-color` (`#4082a040`): a translucent primary tint for
-    /// hover states. The frontend declares it once, in its dark theme block, so it is the same in
-    /// both appearances here too.
-    static var haPrimaryLightFill: Color { srgb(0x40, 0x82, 0xA0, opacity: 0x40 / 255) }
+    /// A translucent ``haPrimary`` tint for hover states, standing in for the frontend's
+    /// `--ha-button-primary-light-color`. The same in both appearances.
+    static var haPrimaryLightFill: Color { srgb(0xC5, 0xA0, 0x59, opacity: 0x40 / 255) }
 
     /// The frontend's `--disabled-color`: the unfilled part of a control's track, and the fill of a
     /// control that is off. The `ha-control-*` components draw it at 20%.
@@ -152,6 +156,7 @@ private func adaptive(light: Color, dark: Color) -> Color {
 
 #if canImport(UIKit)
 public extension UIColor {
-    static let haPrimary = UIColor(red: 0x00 / 255.0, green: 0x9A / 255.0, blue: 0xC7 / 255.0, alpha: 1)
+    static let haPrimary = UIColor(red: 0xC5 / 255.0, green: 0xA0 / 255.0, blue: 0x59 / 255.0, alpha: 1)
+    static let haOnPrimary = UIColor(red: 0x0B / 255.0, green: 0x15 / 255.0, blue: 0x26 / 255.0, alpha: 1)
 }
 #endif

@@ -34,7 +34,7 @@ struct HAExpandedContentView: View {
             progress: 40,
             progressMax: 100,
             icon: "washing-machine",
-            color: "#03A9F4"
+            color: "#C5A059"
         )
     )
     .padding(DesignSystem.Spaces.two)

@@ -145,7 +145,7 @@ struct HACompactTrailingView: View {
                 progress: 40,
                 progressMax: 100,
                 icon: "washing-machine",
-                color: "#03A9F4"
+                color: "#C5A059"
             )
         )
     }
@@ -191,7 +191,7 @@ struct HACompactTrailingView: View {
                 progress: 40,
                 progressMax: 100,
                 icon: "washing-machine",
-                color: "#03A9F4"
+                color: "#C5A059"
             ),
             forcesLimitedWidth: true
         )

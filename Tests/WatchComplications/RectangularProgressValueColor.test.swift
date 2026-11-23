@@ -18,7 +18,7 @@ struct RectangularProgressValueColorTests {
     func automaticContrast() {
         #expect(RectangularProgressView.valueLabelColor(configured: nil, tint: .black) == .white)
         #expect(RectangularProgressView.valueLabelColor(configured: nil, tint: .white) == .black)
-        // The Home Assistant default tint is dark enough for white.
-        #expect(RectangularProgressView.valueLabelColor(configured: nil, tint: .complicationDefaultTint) == .white)
+        // The default Calibre gold tint is light enough to need black.
+        #expect(RectangularProgressView.valueLabelColor(configured: nil, tint: .complicationDefaultTint) == .black)
     }
 }

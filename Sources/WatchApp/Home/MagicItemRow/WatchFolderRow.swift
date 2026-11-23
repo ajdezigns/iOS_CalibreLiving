@@ -99,14 +99,14 @@ struct WatchFolderRow: View {
                 id: "folder1",
                 serverId: "",
                 type: .folder,
-                customization: .init(iconColor: "#03A9F4"),
+                customization: .init(iconColor: "#C5A059"),
                 displayText: "Living Room"
             ),
             itemInfo: .init(
                 id: "folder1",
                 name: "Living Room",
                 iconName: "mdi:folder",
-                customization: .init(iconColor: "#03A9F4")
+                customization: .init(iconColor: "#C5A059")
             )
         )
     }
@@ -124,14 +124,14 @@ struct WatchFolderRow: View {
                     id: "folder1",
                     serverId: "",
                     type: .folder,
-                    customization: .init(iconColor: "#03A9F4"),
+                    customization: .init(iconColor: "#C5A059"),
                     displayText: "Living Room"
                 ),
                 itemInfo: .init(
                     id: "folder1",
                     name: "Living Room",
                     iconName: "mdi:folder",
-                    customization: .init(iconColor: "#03A9F4")
+                    customization: .init(iconColor: "#C5A059")
                 ),
                 layout: .grid
             )

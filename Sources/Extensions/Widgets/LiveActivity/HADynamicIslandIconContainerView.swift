@@ -31,7 +31,7 @@ struct HADynamicIslandIconContainerView: View {
 
 @available(iOS 17.2, *)
 #Preview {
-    HADynamicIslandIconContainerView(slug: "washing-machine", color: "#03A9F4")
+    HADynamicIslandIconContainerView(slug: "washing-machine", color: "#C5A059")
         .padding(DesignSystem.Spaces.two)
         .background(.black)
 }

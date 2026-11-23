@@ -48,7 +48,7 @@ public struct HAProgressButton: View {
                 }
             }
         }
-        .buttonStyle(.primaryButton(fill: resultTint))
+        .buttonStyle(.primaryButton(fill: resultTint, label: resultLabel))
         // A button mid-flight must not be pressed again. `allowsHitTesting` rather than `disabled`,
         // because disabling greys the fill out and the spinner would then sit on a dead-looking
         // button — the frontend drops pointer events for the same reason.
@@ -62,6 +62,14 @@ public struct HAProgressButton: View {
         case .idle, .inProgress: .haPrimary
         case .success: .haSuccessColor
         case .failure: .haErrorColor
+        }
+    }
+
+    /// Navy on the brand gold, white on the success and error colours.
+    private var resultLabel: Color {
+        switch state {
+        case .idle, .inProgress: .haOnPrimary
+        case .success, .failure: .white
         }
     }
 }

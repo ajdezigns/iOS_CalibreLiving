@@ -128,7 +128,7 @@ struct ServerDetailsRowView: View {
                             .overlay(
                                 Text(serverName.prefix(1).uppercased())
                                     .font(.title2.bold())
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(.haOnPrimary)
                             )
                     }
                 }

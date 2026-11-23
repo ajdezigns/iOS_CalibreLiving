@@ -21,15 +21,18 @@ public struct HAButtonStyle: ButtonStyle {
     /// The resting fill. Defaults to the brand colour; `HAProgressButton` swaps it for the success
     /// and error colours so the whole button carries the result, as `ha-progress-button` does.
     private let fill: Color
+    /// The label colour: navy on the brand gold, white on the state colours.
+    private let label: Color
 
-    public init(fill: Color = .haPrimary) {
+    public init(fill: Color = .haPrimary, label: Color = .haOnPrimary) {
         self.fill = fill
+        self.label = label
     }
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.headline)
-            .foregroundColor(.white)
+            .foregroundColor(label)
             .haButtonBasicSizing()
             .padding(.horizontal, HAButtonStylesConstants.horizontalPadding)
             .background(backgroundColorForState(
@@ -273,9 +276,9 @@ public extension ButtonStyle where Self == HAButtonStyle {
     }
 
     /// The primary button in a colour other than the brand's, for a button whose fill is carrying
-    /// state rather than emphasis.
-    static func primaryButton(fill: Color) -> HAButtonStyle {
-        HAButtonStyle(fill: fill)
+    /// state rather than emphasis. The label is white unless another colour is given.
+    static func primaryButton(fill: Color, label: Color = .white) -> HAButtonStyle {
+        HAButtonStyle(fill: fill, label: label)
     }
 }
 

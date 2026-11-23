@@ -54,7 +54,7 @@ public struct HAProgressView: View {
             ZStack {
                 Circle()
                     .stroke(
-                        colorType == .default ? Color.track : Color.white,
+                        colorType == .default ? Color.track : Color.haOnPrimary,
                         style: StrokeStyle(lineWidth: style.lineWidth)
                     )
                     .frame(width: style.size.width, height: style.size.height)

@@ -152,8 +152,8 @@ struct HALockScreenView: View {
 }
 
 enum HAActivityVisualStyle {
-    /// Hex string for Home Assistant brand blue — used for UIColor(hex:) fallback.
-    private static let haBlueHex = "#03A9F4"
+    /// Hex string for Calibre gold — used for UIColor(hex:) fallback.
+    private static let brandHex = "#C5A059"
     private static let supplementalBackgroundHex = "#1C1C1E"
 
     static let defaultSupplementalForegroundColor = Color.white
@@ -166,7 +166,7 @@ enum HAActivityVisualStyle {
     }
 
     static func uiColor(from color: String?) -> UIColor {
-        UIColor(hex: color ?? haBlueHex)
+        UIColor(hex: color ?? brandHex)
     }
 
     /// Explicit `background_color`, else `.clear` so the Lock Screen's own translucent,

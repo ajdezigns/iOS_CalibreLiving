@@ -37,7 +37,7 @@ struct HomeAssistantAccountRowView: View {
                         .fill(.haPrimary)
                         .overlay(
                             Text(serverName.prefix(1).uppercased())
-                                .foregroundColor(.white)
+                                .foregroundColor(Color.haOnPrimary)
                         )
                 }
             }

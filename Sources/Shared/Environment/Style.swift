@@ -66,7 +66,7 @@ public struct Style {
     public var onboardingButtonPrimary: (_ button: UIButton) -> Void = { button in
         Self.onboardingButton(button)
 
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.haOnPrimary, for: .normal)
         button.backgroundColor = .haPrimary
 
         button.setBackgroundImage(

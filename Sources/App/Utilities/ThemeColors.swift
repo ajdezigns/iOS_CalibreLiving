@@ -72,13 +72,14 @@ public struct ThemeColors: Codable {
 }
 
 private extension ThemeColors.Color {
+    /// Calibre navy and cream, shown until the server reports its theme.
     var `default`: UIColor {
         switch self {
-        case .appHeaderBackgroundColor: return UIColor(red: 0.01, green: 0.66, blue: 0.96, alpha: 1.0)
-        case .primaryBackgroundColor: return UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.0)
+        case .appHeaderBackgroundColor: return UIColor(hex: "#0B1526")
+        case .primaryBackgroundColor: return UIColor(hex: "#F6F3EE")
         case .primaryColor: return UIColor.white
         case .textPrimaryColor: return UIColor.white
-        case .appThemeColor: return UIColor(red: 0.01, green: 0.66, blue: 0.96, alpha: 1.0)
+        case .appThemeColor: return UIColor(hex: "#0B1526")
         }
     }
 }
