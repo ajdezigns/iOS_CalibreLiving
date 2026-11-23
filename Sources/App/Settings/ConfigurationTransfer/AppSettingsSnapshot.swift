@@ -57,9 +57,6 @@ struct AppSettingsSnapshot: Codable, Equatable {
     var gestures: [AppGesture: HAGestureAction]?
     var mediaTypesRequiringUserActionForPlayback: [String]?
     var carPlayAssistDebugSettings: CarPlayAssistDebugSettings?
-    /// `AppIcon.rawValue` of the selected alternate icon, or `AppIcon.Release.rawValue` for the
-    /// default icon (which is `nil` in `UIApplication.alternateIconName`).
-    var appIcon: String?
 
     @MainActor
     static func capture() -> AppSettingsSnapshot {
@@ -112,8 +109,7 @@ struct AppSettingsSnapshot: Codable, Equatable {
             mediaTypesRequiringUserActionForPlayback: store.mediaTypesRequiringUserActionForPlayback
                 .map(\.rawValue)
                 .sorted(),
-            carPlayAssistDebugSettings: store.carPlayAssistDebugSettings,
-            appIcon: UIApplication.shared.alternateIconName ?? AppIcon.Release.rawValue
+            carPlayAssistDebugSettings: store.carPlayAssistDebugSettings
         )
     }
 
@@ -127,7 +123,6 @@ struct AppSettingsSnapshot: Codable, Equatable {
         applyPrivacySettings(store: store)
         applyLocationSettings(store: store)
         applyMenuItemTemplate(store: store)
-        applyAppIcon()
     }
 
     @MainActor
@@ -208,17 +203,5 @@ struct AppSettingsSnapshot: Codable, Equatable {
             return
         }
         store.menuItemTemplate = (server, menuItemTemplate)
-    }
-
-    @MainActor
-    private func applyAppIcon() {
-        guard let appIcon, AppIcon(rawValue: appIcon) != nil else { return }
-        let iconName: String? = appIcon == AppIcon.Release.rawValue ? nil : appIcon
-        guard UIApplication.shared.alternateIconName != iconName else { return }
-        UIApplication.shared.setAlternateIconName(iconName) { error in
-            if let error {
-                Current.Log.error("Failed to apply imported app icon \(appIcon): \(error.localizedDescription)")
-            }
-        }
     }
 }

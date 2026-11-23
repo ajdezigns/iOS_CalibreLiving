@@ -18,7 +18,6 @@ struct GeneralSettingsView: View {
                 title: L10n.SettingsDetails.General.title,
                 subtitle: Current.isCatalyst ? L10n.SettingsDetails.General.bodyMac : L10n.SettingsDetails.General.body
             )
-            appIconSelection
 
             #if targetEnvironment(macCatalyst)
             Section {
@@ -66,22 +65,6 @@ struct GeneralSettingsView: View {
                 redrawView()
             })) {
                 Text(L10n.SettingsDetails.General.Restoration.title)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var appIconSelection: some View {
-        if !Current.isCatalyst {
-            Section {
-                NavigationLink(destination: AppIconSelectorView()) {
-                    HStack(spacing: DesignSystem.Spaces.two) {
-                        RoundedRectangle(cornerRadius: DesignSystem.CornerRadius.half)
-                            .frame(width: 18, height: 18)
-                            .foregroundStyle(Color.haPrimary)
-                        Text(L10n.SettingsDetails.General.AppIcon.title)
-                    }
-                }
             }
         }
     }
@@ -303,7 +286,6 @@ extension GeneralSettingsView: SettingsScreenSearchable {
     /// "Remember last page" is a system setting on Catalyst, so it is only indexed where the toggle shows.
     static var settingsSearchEntries: [SettingsSearchEntry] {
         var entries = [
-            SettingsSearchEntry(L10n.SettingsDetails.General.AppIcon.title),
             SettingsSearchEntry(L10n.SettingsDetails.General.OpenInBrowser.title),
             SettingsSearchEntry(L10n.SettingsDetails.General.OpenInPrivateTab.title),
             SettingsSearchEntry(L10n.SettingsDetails.Notifications.PromptToOpenUrls.title),

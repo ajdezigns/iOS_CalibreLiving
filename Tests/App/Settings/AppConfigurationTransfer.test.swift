@@ -274,7 +274,6 @@ struct AppConfigurationTransferTests {
         #expect(decoded.privacy == nil)
         #expect(decoded.locationSources == nil)
         #expect(decoded.gestures == nil)
-        #expect(decoded.appIcon == nil)
     }
 
     private let validServerId = "server-valid"
