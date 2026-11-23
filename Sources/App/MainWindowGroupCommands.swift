@@ -4,7 +4,7 @@ import SwiftUI
 
 struct AppMenuBarCommands: Commands {
     private var appName: String {
-        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Home Assistant"
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Calibre Living"
     }
 
     var body: some Commands {

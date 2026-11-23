@@ -69,7 +69,7 @@ public struct WatchDeviceIdentity: Equatable {
 
     /// This watch, as it is right now, for a registration with `server`.
     public static func current(for server: Server, bundle: Bundle = .main) -> WatchDeviceIdentity {
-        let displayName = bundle.infoDictionary?["CFBundleDisplayName"] as? String ?? "Home Assistant"
+        let displayName = bundle.infoDictionary?["CFBundleDisplayName"] as? String ?? "Calibre Living"
         return WatchDeviceIdentity(
             appID: bundle.bundleIdentifier ?? AppConstants.BundleID,
             appName: appName(companionAppName: displayName),

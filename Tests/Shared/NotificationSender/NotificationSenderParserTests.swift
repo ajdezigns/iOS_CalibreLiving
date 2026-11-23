@@ -33,7 +33,7 @@ final class NotificationSenderParserTests: XCTestCase {
     func testEmptyTitle_fallsBackToAppNameAsSenderName() {
         let c = content(title: "", userInfo: ["notification_icon": "mdi:door"])
         let parsed = NotificationSenderParser.parse(from: c)
-        XCTAssertEqual(parsed?.senderName, "Home Assistant")
+        XCTAssertEqual(parsed?.senderName, "Calibre Living")
     }
 
     func testMdiOnly_defaults() {

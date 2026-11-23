@@ -168,7 +168,7 @@ class MenuManager {
     }
 
     private var appName: String {
-        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Home Assistant"
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Calibre Living"
     }
 
     public func subscribeStatusItemTitle(
@@ -387,7 +387,7 @@ final class StatusItemManager {
     private var shouldRefreshTitleSubscription = false
 
     private var appName: String {
-        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Home Assistant"
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Calibre Living"
     }
 
     func configure() {

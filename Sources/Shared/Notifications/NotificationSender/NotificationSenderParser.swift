@@ -10,7 +10,7 @@ public enum NotificationSenderParser {
         // rather than read from CFBundleDisplayName because this runs inside the
         // notification extensions, where Bundle.main reports the extension's own
         // display name (e.g. "APNSAttachmentService"), not the app's.
-        let senderName = content.title.isEmpty ? "Home Assistant" : content.title
+        let senderName = content.title.isEmpty ? "Calibre Living" : content.title
 
         let userInfo = content.userInfo
         let nestedData = userInfo["data"] as? [String: Any]

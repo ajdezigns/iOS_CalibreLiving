@@ -56,7 +56,7 @@ final class DynamicNotificationViewModel: ObservableObject {
 
         // Unlike iOS, the watch long-look does not show the app name near our custom
         // content, so a title-less payload would render as a bare message.
-        title = notificationContent.title.isEmpty ? "Home Assistant" : notificationContent.title
+        title = notificationContent.title.isEmpty ? "Calibre Living" : notificationContent.title
         subtitle = notificationContent.subtitle
         message = notificationContent.body
         self.notificationContent = notificationContent
